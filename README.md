@@ -44,7 +44,8 @@ Os resultados mostrados abaixo indicam o valor aproximado da integral e o tempo 
 
 A seguir, o gráfico que mostra a comparação entre o **tempo de execução** dos métodos Mestre e Butterfly para diferentes números de processos.
 
-![Gráfico de Desempenho](grafico.png)
+![image](https://github.com/user-attachments/assets/ebbeb25d-6010-4042-bca0-0b0f21f11627)
+
 
 ### **Observações sobre o gráfico**:
 - O **tempo de execução** diminui conforme o número de processos aumenta, refletindo a **paralelização**.
