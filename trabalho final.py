@@ -17,7 +17,7 @@ def trapezoidal_chunk(a, b, n):
         x += h
     return h * soma
 
-# Implementação onde o mestre processa
+#mestre processa
 def mestre_processa(a, b, n):
     comm = MPI.COMM_WORLD
     rank = comm.Get_rank()
@@ -43,7 +43,7 @@ def mestre_processa(a, b, n):
         result = trapezoidal_chunk(a_local, b_local, chunk_size)
         comm.send(result, dest=0)
 
-# Implementação método Butterfly
+#Butterfly
 def butterfly_method(a, b, n):
     comm = MPI.COMM_WORLD
     rank = comm.Get_rank()
@@ -71,7 +71,6 @@ def butterfly_method(a, b, n):
         total = h * ((f(a) + f(b)) / 2) + local_result
         return total
 
-# Função principal
 def main():
     comm = MPI.COMM_WORLD
     rank = comm.Get_rank()
@@ -81,7 +80,6 @@ def main():
     b = 1000000
     n = 10000000
 
-    # Calcular tempo de execução e resultados
     start = time()
     if rank == 0:
         print("Calculando com Mestre...")
@@ -100,6 +98,5 @@ def main():
         print(f"Resultado Butterfly: {resultado_butterfly}")
         print(f"Tempo Butterfly: {time() - start} segundos")
 
-# Início do programa
 if __name__ == "__main__":
     main()
